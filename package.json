@@ -1,0 +1,40 @@
+{
+  "name": "eslint-configs",
+  "version": "1.0.0",
+  "description": "ESLint configurations for TypeScript and Svelte projects",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "prepublish": "npm run build && npm run format"
+  },
+  "peerDependencies": {
+    "eslint": "^9.34.0",
+    "typescript-eslint": "^8.42.0",
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0",
+    "prettier": "^3.6.2"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "typescript",
+    "svelte"
+  ]
+}
