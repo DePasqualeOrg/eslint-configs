@@ -19,7 +19,11 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",
-    "prepublish": "npm run build && npm run format"
+    "prepublishOnly": "npm run build && npm run format",
+    "update:npm-packages": "ncu --target minor -u && ncu --interactive --format group",
+    "dev:run-container": "docker-compose -f docker-compose.dev.yml up --build",
+    "dev:container-logs": "docker-compose -f docker-compose.dev.yml logs",
+    "dev:open-in-vs-code": "devcontainer open ."
   },
   "peerDependencies": {
     "eslint": "^9.34.0",

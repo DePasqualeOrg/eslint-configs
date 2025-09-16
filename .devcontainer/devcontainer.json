@@ -1,0 +1,31 @@
+// Reference: https://github.com/anthropics/claude-code/tree/main/.devcontainer
+
+{
+  "name": "ESLint Configs",
+  "dockerComposeFile": "../docker-compose.dev.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-typescript-next",
+        "streetsidesoftware.code-spell-checker",
+        "docker.docker",
+        "ms-azuretools.vscode-docker",
+        "anthropic.claude-code"
+      ],
+      "settings": {}
+    }
+  },
+  "overrideCommand": false,
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "echo 'Dev container ready'"
+}
