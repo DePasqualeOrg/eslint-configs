@@ -14,7 +14,8 @@
         "streetsidesoftware.code-spell-checker",
         "docker.docker",
         "ms-azuretools.vscode-docker",
-        "anthropic.claude-code"
+        "anthropic.claude-code",
+        "openai.chatgpt"
       ],
       "settings": {}
     }
