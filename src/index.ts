@@ -169,6 +169,13 @@ const svelteConfig: Linter.Config = {
   rules: {
     'prefer-const': 'off',
     'svelte/prefer-const': 'error',
+    // Svelte's `$bindable()` uses default-assignment syntax, and a bindable prop
+    // set only for the parent (e.g. `open = false`) is never read locally, so
+    // typescript-eslint and core mis-flag both as useless. Worse, the autofix
+    // strips `= $bindable()` from required props, silently breaking every `bind:`
+    // on the component. Disable both for Svelte files.
+    '@typescript-eslint/no-useless-default-assignment': 'off',
+    'no-useless-assignment': 'off',
   },
 };
 
