@@ -21,12 +21,5 @@
     }
   },
   "overrideCommand": false,
-  "forwardPorts": [5173],
-  "portsAttributes": {
-    "5173": {
-      "label": "Vite Dev Server",
-      "onAutoForward": "silent"
-    }
-  },
   "postCreateCommand": "echo 'Dev container ready'"
 }

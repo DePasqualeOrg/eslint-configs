@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "ESLint configurations for TypeScript and Svelte projects",
   "type": "module",
+  "packageManager": "pnpm@11.8.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "sourceMap": "src",
@@ -19,10 +20,10 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",
-    "prepublishOnly": "npm run build && npm run format",
+    "prepublishOnly": "pnpm build && pnpm format",
     "update:npm-packages": "ncu --target minor -u && ncu --interactive --format group",
-    "dev:run-container": "docker-compose -f docker-compose.dev.yml up --build",
-    "dev:container-logs": "docker-compose -f docker-compose.dev.yml logs",
+    "dev:run-container": "docker compose -f docker-compose.dev.yml up -d --build app",
+    "dev:container-logs": "docker compose -f docker-compose.dev.yml logs -f app",
     "dev:open-in-vs-code": "devcontainer open ."
   },
   "peerDependencies": {

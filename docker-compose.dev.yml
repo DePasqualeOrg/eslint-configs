@@ -8,6 +8,9 @@ services:
       - .:/workspace
       # Keep node_modules in volume (not on host)
       - node_modules:/workspace/node_modules
+      # Keep the pnpm store in a named volume too (off the host bind mount; persists
+      # across rebuilds). Matches npm_config_store_dir in the image.
+      - pnpm_store:/workspace/.pnpm-store
       # Exclude these directories (uses anonymous volume)
       - /workspace/.git
       # Persistent volumes for dev container configuration
@@ -17,5 +20,6 @@ services:
 
 volumes:
   node_modules:
+  pnpm_store:
   bash_history:
   claude_config:
